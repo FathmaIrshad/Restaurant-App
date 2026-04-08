@@ -1,0 +1,114 @@
+/* Main Card Layout */
+.DishItemLi {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1.5px solid #cbd5e1;
+  background-color: #ffffff;
+  list-style-type: none;
+}
+
+.dish-details-container {
+  flex: 1;
+  padding-right: 15px;
+}
+
+.fw-bold {
+  font-family: 'Roboto';
+  font-size: 18px;
+  color: #1e293b;
+  margin: 0 0 8px 0;
+}
+
+.dish-price {
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 10px;
+}
+
+.desc {
+  font-size: 14px;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  max-width: 90%;
+}
+
+.QuantityButton {
+  background-color: #166534; /* Dark forest green */
+  display: inline-flex;
+  align-items: center;
+  border-radius: 25px;
+  padding: 4px 12px;
+  color: #ffffff;
+  margin-top: 10px;
+}
+
+.btn-qtyChange {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+}
+
+.quantity-text {
+  margin: 0 15px;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.right-content-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 180px;
+}
+
+.calorie {
+  color: #f59e0b; /* Orange/Yellow as seen in image */
+  font-weight: bold;
+  font-size: 14px;
+  margin-right: 20px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.dishPicture {
+  width: 90px;
+  height: 90px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.customizationMsg {
+  color: #4f46e5; /* Indigo/Purple */
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 12px;
+}
+
+.not-available {
+  color: #ef4444; /* Red */
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+/* Responsive for small mobile */
+@media screen and (max-width: 576px) {
+  .DishItemLi {
+    padding: 15px;
+  }
+  .dishPicture {
+    width: 70px;
+    height: 70px;
+  }
+  .right-content-container {
+    min-width: 140px;
+  }
+}

@@ -1,0 +1,47 @@
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  background-color: #ffffff;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.not-found-image {
+  width: 300px;
+  max-width: 80%;
+  margin-bottom: 24px;
+}
+
+.not-found-heading {
+  font-size: 28px;
+  color: #1e293b;
+  margin-bottom: 12px;
+}
+
+.not-found-description {
+  font-size: 16px;
+  color: #64748b;
+  margin-bottom: 24px;
+  max-width: 400px;
+  line-height: 1.5;
+}
+
+.home-btn {
+  background-color: #db4c5f; /* Rose-red from your Menu tabs */
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.home-btn:hover {
+  background-color: #bf3e4e;
+}

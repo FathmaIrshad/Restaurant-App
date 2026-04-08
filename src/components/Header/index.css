@@ -1,0 +1,68 @@
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 5%;
+  border-bottom: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  @media (min-width: 992px) {
+    .orders-title {
+      display: block;
+      font-weight: bold;
+      color: #58575c;
+    }
+  }
+}
+
+.heading {
+  font-family: 'Roboto';
+  font-size: 20px;
+  color: #475569;
+  font-weight: bold;
+  margin: 0;
+}
+
+.cart-summary {
+  display: flex;
+  align-items: center;
+}
+
+.orders-title {
+  font-family: 'Roboto';
+  font-weight: 500;
+  margin-right: 15px;
+  color: #475569;
+  font-size: 16px;
+}
+
+.cart-icon-container {
+  position: relative; /* This allows the badge to float relative to the icon */
+  display: flex;
+  align-items: center;
+}
+
+#cartIcon {
+  color: #5b5b5b;
+}
+
+.cartListCounter {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #ef4444; /* Bright red like the demo image */
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: bold;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ffffff;
+}
+
+.link-item {
+  text-decoration: none;
+  color: inherit;
+}

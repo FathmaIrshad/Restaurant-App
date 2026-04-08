@@ -1,0 +1,63 @@
+/* Container for the entire application view */
+.RestaurantPageContainer {
+  max-width: 600px; /* Standard mobile-first width */
+  margin: 0 auto;
+  background-color: #ffffff;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* 1. Slidable Categories Styling */
+.tabListContainer {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto; /* Enables horizontal sliding */
+  white-space: nowrap;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  border-bottom: 1px solid #e2e8f0;
+  background-color: #ffffff;
+
+  /* Hiding scrollbars for a clean "App" look */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.tabListContainer::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+/* 2. Dish List Container */
+.DishContainer {
+  padding: 10px 0;
+  margin: 0;
+  list-style-type: none;
+  background-color: #ffffff;
+}
+
+/* 3. Loading State Styling */
+.loading-para {
+  text-align: center;
+  font-family: 'Roboto';
+  color: #64748b;
+  margin-top: 50px;
+  font-size: 18px;
+}
+
+/* Optional: Sticky navigation for better UX */
+.tabListContainer {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Responsive adjustment for desktop */
+@media screen and (min-width: 768px) {
+  .RestaurantPageContainer {
+    max-width: 800px;
+    border-left: 1px solid #f1f5f9;
+    border-right: 1px solid #f1f5f9;
+  }
+}
