@@ -1,0 +1,94 @@
+
+.login-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #ffffff; /* Matching the clean white of the menu */
+  font-family: 'Roboto', sans-serif;
+}
+
+.login-container {
+  width: 90%;
+  max-width: 450px;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08); /* Soft shadow like the menu cards */
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+}
+
+/* Optional: Add the logo text to match the Header */
+.brand-name {
+  color: #333333;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #475569; /* Gray shade used in menu categories */
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+input {
+  height: 45px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 10px 16px;
+  margin-bottom: 24px;
+  outline: none;
+  font-size: 16px;
+  color: #1e293b;
+  transition: border-color 0.2s;
+}
+
+input:focus {
+  border-color: #db2c66; /* Matching the active category color from image */
+}
+
+/* Matching the "My Orders" / "Active Category" branding */
+button {
+  background-color: #db2c66; 
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  height: 48px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #b52252;
+}
+
+.error-message {
+  color: #ef4444; /* Consistent with "Not Available" text in image */
+  font-size: 14px;
+  margin-top: 12px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .login-container {
+    padding: 24px;
+    border: none;
+    box-shadow: none;
+  }
+}

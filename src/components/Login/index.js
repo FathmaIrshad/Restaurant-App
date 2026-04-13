@@ -1,6 +1,7 @@
 import {Component} from 'react'
 import {Redirect, withRouter} from 'react-router-dom'
 import Cookies from 'js-cookie'
+import './index.css'
 
 class LoginForm extends Component {
   state = {
@@ -80,6 +81,7 @@ class LoginForm extends Component {
     return (
       <div className="login-page">
         <div className="login-container">
+          <h1 className="brand-name">UNI Resto Cafe</h1>
           <form onSubmit={this.onSubmitForm}>
             <label htmlFor="username">USERNAME</label>
             <input
