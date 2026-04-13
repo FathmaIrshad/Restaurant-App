@@ -1,13 +1,13 @@
-import {FiMinus, FiPlus} from 'react-icons/fi'
-import CartContext from '../../context/CartContext'
 import {useState} from 'react'
+import CartContext from '../../context/CartContext'
+import './index.css'
 
 const DishItem = props => {
   const [quantity, changeQuantity] = useState(0)
   return (
     <CartContext.Consumer>
       {value => {
-        const {cartList, addCartItem, removeCartItem} = value
+        const {cartList, addCartItem} = value
         const {eachDish} = props
         const {
           dish_name: dishName,
@@ -21,20 +21,20 @@ const DishItem = props => {
           addonCat: addOn,
           dish_id: dishId,
         } = eachDish
-        const onIncrementItemQuantity = eachDish => {
+        const onIncrementItemQuantity = () => {
           const newQuantity = quantity + 1
           changeQuantity(newQuantity)
-          // eachDish.quantity = newQuantity
-          // addCartItem(eachDish)
-          addCartItem(eachDish)
         }
-        const onDecrementItemQuantity = eachDish => {
+        const onDecrementItemQuantity = () => {
           if (quantity > 0) {
             const newQuantity = quantity - 1
             changeQuantity(newQuantity)
-            removeCartItem(eachDish)
           }
         }
+        const onClickAddToCart = () => {
+          addCartItem({...eachDish, quantity})
+        }
+
         return (
           <li className="row  DishItemLi">
             <div className="col-8 d-flex mr-auto">
@@ -55,32 +55,33 @@ const DishItem = props => {
               </div>
               <div className="dish-details-container">
                 <h3 className="fw-bold">{dishName}</h3>
-                <p className="dish-price">
-                  {curr} {price}
-                </p>
+                <p className="dish-price">{`${curr}${price}`}</p>
                 <p className="desc">{desc}</p>
                 {availibility ? (
-                  <>
-                    <p className="QuantityButton">
-                      <button
-                        className="btn-qtyChange"
-                        type="button"
-                        onClick={() => onDecrementItemQuantity(eachDish)}
-                      >
-                        -
-                      </button>
-                      <p className="quantity-text">{quantity}</p>
-                      <button
-                        className="btn-qtyChange"
-                        type="button"
-                        onClick={() => onIncrementItemQuantity(eachDish)}
-                      >
-                        +
-                      </button>
-                    </p>
-                  </>
+                  <div className="QuantityButton">
+                    <button
+                      type="button"
+                      className="btn-qtyChange"
+                      onClick={() => onDecrementItemQuantity(eachDish)}
+                    >
+                      -
+                    </button>
+                    <p className="quantity-text">{quantity}</p>
+                    <button
+                      type="button"
+                      className="btn-qtyChange"
+                      onClick={() => onIncrementItemQuantity(eachDish)}
+                    >
+                      +
+                    </button>
+                  </div>
                 ) : (
                   <p className="not-available">Not available</p>
+                )}
+                {availibility === true && quantity > 0 && (
+                  <button type="button" onClick={onClickAddToCart}>
+                    ADD TO CART
+                  </button>
                 )}
                 {addOn.length > 0 ? (
                   <p className="customizationMsg">Customizations available</p>

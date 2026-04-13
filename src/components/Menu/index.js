@@ -1,8 +1,9 @@
+import {Component} from 'react'
 import Header from '../Header'
 import './index.css'
-import {Component} from 'react'
 import DishItem from '../DishItem'
 import TabItem from '../TabItem'
+import CartContext from '../../context/CartContext'
 
 class Menu extends Component {
   state = {menuList: [], activeTabId: '', heading: ''}
@@ -10,6 +11,7 @@ class Menu extends Component {
   componentDidMount() {
     this.getDishes()
   }
+
   getDishes = async () => {
     const url =
       'https://apis2.ccbp.in/restaurant-app/restaurant-menu-list-details'
@@ -18,32 +20,37 @@ class Menu extends Component {
     }
     const response = await fetch(url, options)
     const data = await response.json()
+    const {setRestaurantName} = this.context
     if (response.ok === true) {
       const heading = data[0].restaurant_name
+      setRestaurantName(heading)
       const updatedData = data[0].table_menu_list.map(eachItem => ({
         category: eachItem.menu_category,
         categoryId: eachItem.menu_category_id,
         dishes: eachItem.category_dishes,
       }))
       this.setState({
-        heading: heading,
+        heading,
         menuList: updatedData,
         activeTabId: updatedData[0].categoryId,
       })
     }
   }
+
   clickTabItem = categoryId => {
     const {activeTabId} = this.state
     this.setState({activeTabId: categoryId})
   }
+
   render() {
     const {menuList, activeTabId, heading} = this.state
     const MenuItem = menuList.find(
       eachItem => eachItem.categoryId === activeTabId,
     )
+
     return (
       <div className="RestaurantPageContainer">
-        <Header heading={heading} />
+        <Header />
         <ul className="tabListContainer">
           {menuList.map(item => (
             <TabItem
@@ -67,4 +74,7 @@ class Menu extends Component {
     )
   }
 }
+
+Menu.contextType = CartContext
+
 export default Menu

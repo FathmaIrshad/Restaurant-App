@@ -2,8 +2,10 @@
 .DishItemLi {
   display: flex;
   justify-content: space-between;
+  margin: 10px;
   padding: 20px;
-  border-bottom: 1.5px solid #cbd5e1;
+  border: 1.5px solid #d1d1d1;
+  border-radius: 10px;
   background-color: #ffffff;
   list-style-type: none;
 }
