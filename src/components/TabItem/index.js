@@ -1,5 +1,4 @@
 import './index.css'
-import React from 'react'
 
 const TabItem = props => {
   const {item, clickTabItem, checkactiveTab} = props
